@@ -29,7 +29,6 @@ def eval_metrics(actual, pred):
 
 
 if __name__ == "__main__":
-    warnings.filterwarnings("ignore")
     np.random.seed(40)
 
     # Read the wine-quality csv file from the URL
@@ -80,7 +79,9 @@ if __name__ == "__main__":
 
 
 
+
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        print(">>>>> tracking_url_type_store: ", tracking_url_type_store)
 
         # Model registry does not work with file store
         if tracking_url_type_store != "file":
